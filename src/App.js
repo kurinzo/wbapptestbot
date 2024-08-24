@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WelcomeScreen from './components/WelcomeScreen';
+import Program from './components/Program';
+import AskSpeaker from './components/AskSpeaker';
+import Networking from './components/Networking';
+import './App.css'; // Импорт CSS
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="container">
+                <Routes>
+                    <Route path="/" element={<WelcomeScreen />} />
+                    <Route path="/program" element={<Program />} />
+                    <Route path="/ask-speaker" element={<AskSpeaker />} />
+                    <Route path="/networking/*" element={<Networking />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
