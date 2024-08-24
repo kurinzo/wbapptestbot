@@ -1,0 +1,9 @@
+{
+  "name": "My Telegram WebApp",
+  "short_name": "WebApp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0088cc",
+  "description": "A sample Telegram WebApp"
+}
