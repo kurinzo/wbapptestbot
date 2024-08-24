@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const MyPairs = () => {
     const [pairs, setPairs] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [locations, setLocations] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         // Заглушка для пар
@@ -42,8 +40,7 @@ const MyPairs = () => {
     const currentPair = pairs[currentIndex];
 
     return (
-        <div className="container">
-            <button className="back" onClick={() => navigate(-1)}>Назад</button>
+        <div>
             <h1>Мои пары</h1>
             {currentPair && (
                 <div className="user-info">

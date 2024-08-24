@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WelcomeScreen from './components/WelcomeScreen';
 import Program from './components/Program';
@@ -7,6 +7,12 @@ import Networking from './components/Networking';
 import './App.css'; // Импорт CSS
 
 function App() {
+    useEffect(() => {
+        if (window.Telegram?.WebApp) {
+            window.Telegram.WebApp.expand();
+        }
+    }, []);
+
     return (
         <Router>
             <div className="container">

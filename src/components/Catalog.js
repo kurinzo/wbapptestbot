@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Catalog = () => {
     const [people, setPeople] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const navigate = useNavigate();
 
     useEffect(() => {
         // Заглушка для каталога
@@ -34,8 +32,7 @@ const Catalog = () => {
     const currentPerson = people[currentIndex];
 
     return (
-        <div className="container">
-            <button className="back" onClick={() => navigate(-1)}>Назад</button>
+        <div>
             <h1>Каталог собеседников</h1>
             {currentPerson && (
                 <div className="user-info">
